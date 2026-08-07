@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // BASE_URL = the address of our Spring Boot server
 // All API calls will start with this URL
-const BASE_URL = 'http://localhost:8080/api';
+const BASE_URL = 'https://british-auction-rfq-1pht.onrender.com/api';
 
 // ─── RFQ API FUNCTIONS ───────────────────────────────────────────
 
