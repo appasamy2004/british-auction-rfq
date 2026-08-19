@@ -13,6 +13,8 @@ function CountdownTimer({ closeTime, status }) {
       return; // Don't start timer
     }
 
+    let timer;
+
     // This function calculates how much time is left RIGHT NOW
     const calculateTimeLeft = () => {
       const now = new Date();                    
@@ -22,7 +24,7 @@ function CountdownTimer({ closeTime, status }) {
       if (diff <= 0) {
        
         setTimeLeft('⏰ Auction Closed');
-        clearInterval(timer);
+        if (timer) clearInterval(timer);
         return;
       }
 
@@ -43,7 +45,7 @@ function CountdownTimer({ closeTime, status }) {
 
     calculateTimeLeft(); 
 
-    const timer = setInterval(calculateTimeLeft, 1000);
+    timer = setInterval(calculateTimeLeft, 1000);
 
 
     return () => clearInterval(timer);
